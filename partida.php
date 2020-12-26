@@ -54,8 +54,8 @@
       </div>
 
       <div>
-        <label for="jogador1PontosDeVida">Pontos de vida final do jogador 1</label>
-        <input type="text" name="jogador1PontosDeVida" id="jogador1PontosDeVida">
+        <label for="jogador1PontosVida">Pontos de vida final do jogador 1</label>
+        <input type="text" name="jogador1PontosVida" id="jogador1PontosVida">
       </div>
 
       <div>
@@ -79,8 +79,8 @@
       </div>
 
       <div>
-        <label for="jogador2PontosDeVida">Pontos de vida final do jogador 2</label>
-        <input type="text" name="jogador2PontosDeVida" id="jogador2PontosDeVida">
+        <label for="jogador2PontosVida">Pontos de vida final do jogador 2</label>
+        <input type="text" name="jogador2PontosVida" id="jogador2PontosVida">
       </div>
 
       <div>
