@@ -1,0 +1,17 @@
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form .row {
+  display: flex;
+  justify-content: space-around;
+}
+
+form h1 {
+  margin: 0 auto 20px;
+}
+
+form button {
+  margin: 100px auto 0;
+}
