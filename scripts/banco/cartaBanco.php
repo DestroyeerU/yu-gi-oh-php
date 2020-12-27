@@ -5,7 +5,7 @@ function criarTabelaCartas($conexao) {
     CAR_CODIGO INT AUTO_INCREMENT PRIMARY KEY,
     CAR_NOME VARCHAR(100) NOT NULL,
     CAR_DESC VARCHAR(500) NOT NULL,
-    CAR_TIPO VARCHAR(20) NOT NULL
+    CAR_TIC_CODIGO INT NOT NULL REFERENCES TB_TIPOSCAR(TIC_CODIGO)
   )');
 
   if($criarTabela === true) {
@@ -16,7 +16,7 @@ function criarTabelaCartas($conexao) {
 }
 
 function insertCarta($conexao, $nome, $desc, $tipo) {
-  $insertQuery = $conexao->query("INSERT INTO TB_CARTAS (CAR_NOME, CAR_DESC, CAR_TIPO) values ('$nome', '$desc', '$tipo')");
+  $insertQuery = $conexao->query("INSERT INTO TB_CARTAS (CAR_NOME, CAR_DESC, CAR_TIC_CODIGO) values ('$nome', '$desc', '$tipo')");
 
   if($insertQuery === true) {
     echo "Inserido com sucesso: $nome / $desc / $tipo <br>";
@@ -26,7 +26,10 @@ function insertCarta($conexao, $nome, $desc, $tipo) {
 }
 
 function selectCartas($conexao, $campos) {
-  $consulta = $conexao->query("SELECT $campos FROM TB_CARTAS");
+  $consulta = $conexao->query("
+    SELECT $campos FROM TB_CARTAS
+    JOIN TB_TIPOSCAR ON CAR_TIC_CODIGO = TIC_CODIGO
+  ");
 
   $arrayCartas = [];
 

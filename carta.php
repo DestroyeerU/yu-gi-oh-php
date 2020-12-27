@@ -4,18 +4,27 @@
 require('./scripts/banco/config.php');
 require('./scripts/banco/cartaBanco.php');
 
-insertCarta($conexao, "Mago Negro", "O implacável", "Monstro");
-insertCarta($conexao, "Olhos Azuis","O invecível", "Monstro");
-insertCarta($conexao, "Olhos Vermelhos","O indestrutível", "Monstro");
+insertCarta($conexao, "Mago Negro", "O implacável", 1);
+insertCarta($conexao, "Olhos Azuis","O invecível", 1);
+insertCarta($conexao, "Olhos Vermelhos","O indestrutível", 1);
 
-$arrayCartas = selectCartas($conexao, "CAR_CODIGO, CAR_NOME, CAR_DESC, CAR_TIPO");
+$arrayCartas = selectCartas($conexao, "CAR_CODIGO, CAR_NOME, CAR_DESC, TIC_NOME");
 
-echo $arrayCartas[0]["CAR_NOME"];
-echo $arrayCartas[0]["CAR_CODIGO"];
+echo "CARTAS <br>";
+
+echo $arrayCartas[0]["CAR_CODIGO"] . " - ";
+echo $arrayCartas[0]["CAR_NOME"]   . " - ";
+echo $arrayCartas[0]["TIC_NOME"]   . " - ";
 echo $arrayCartas[0]["CAR_DESC"];
-echo $arrayCartas[0]["CAR_TIPO"];
-echo $arrayCartas[1]["CAR_NOME"];
-echo $arrayCartas[2]["CAR_NOME"];
+
+echo "<br>";
+
+echo $arrayCartas[1]["CAR_CODIGO"] . " - ";
+echo $arrayCartas[1]["CAR_NOME"]   . " - ";
+echo $arrayCartas[1]["TIC_NOME"]   . " - ";
+echo $arrayCartas[1]["CAR_DESC"];
+echo "<br> <br>";
+
 
 
 $conexao->close();
