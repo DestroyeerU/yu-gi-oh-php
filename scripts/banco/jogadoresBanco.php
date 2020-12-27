@@ -13,13 +13,13 @@ function criarTabelaJogadores($conexao) {
   }
 }
 
-function insertJogador($conexao, $nome) {
-  $insertQuery = $conexao->query("INSERT INTO TB_JOGADORES (JOG_NOME) values ('$nome')");
+function insertJogador($conexao, $JOG_NOME) {
+  $insertQuery = $conexao->query("INSERT INTO TB_JOGADORES (JOG_NOME) values ('$JOG_NOME')");
 
   if($insertQuery === true) {
-    echo "Inserido com sucesso: $nome <br>";
+    echo "Inserido com sucesso: $JOG_NOME <br>";
   } else {
-    echo "Erro inserir valor: $nome " . $conexao->error;
+    echo "Erro inserir valor: $JOG_NOME " . $conexao->error;
   }
 }
 

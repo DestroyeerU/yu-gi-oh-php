@@ -13,13 +13,13 @@ function criarTabelaTiposCarta($conexao) {
   }
 }
 
-function insertTipoCarta($conexao, $nome) {
-  $insertQuery = $conexao->query("INSERT INTO TB_TIPOSCAR (TIC_NOME) values ('$nome')");
+function insertTipoCarta($conexao, $TIC_NOME) {
+  $insertQuery = $conexao->query("INSERT INTO TB_TIPOSCAR (TIC_NOME) values ('$TIC_NOME')");
 
   if($insertQuery === true) {
-    echo "Inserido com sucesso: $nome <br>";
+    echo "Inserido com sucesso: $TIC_NOME <br>";
   } else {
-    echo "Erro inserir valor: $nome " . $conexao->error;
+    echo "Erro inserir valor: $TIC_NOME " . $conexao->error;
   }
 }
 

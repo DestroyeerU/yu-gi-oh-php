@@ -13,13 +13,13 @@ function criarTabelaDecks($conexao) {
   }
 }
 
-function insertDeck($conexao, $nome) {
-  $insertQuery = $conexao->query("INSERT INTO TB_DECKS (DEC_NOME) values ('$nome')");
+function insertDeck($conexao, $DEC_NOME) {
+  $insertQuery = $conexao->query("INSERT INTO TB_DECKS (DEC_NOME) values ('$DEC_NOME')");
 
   if($insertQuery === true) {
-    echo "Inserido com sucesso: $nome <br>";
+    echo "Inserido com sucesso: $DEC_NOME <br>";
   } else {
-    echo "Erro inserir valor: $nome -> $conexao->error <br>";
+    echo "Erro inserir valor: $DEC_NOME -> $conexao->error <br>";
   }
 }
 

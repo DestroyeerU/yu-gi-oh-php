@@ -15,13 +15,17 @@ function criarTabelaCartas($conexao) {
   }
 }
 
-function insertCarta($conexao, $nome, $desc, $tipo) {
-  $insertQuery = $conexao->query("INSERT INTO TB_CARTAS (CAR_NOME, CAR_DESC, CAR_TIC_CODIGO) values ('$nome', '$desc', '$tipo')");
+function insertCarta($conexao, $CAR_NOME, $CAR_DESC, $CAR_TIC_CODIGO) {
+  $insertQuery = $conexao->query("INSERT INTO TB_CARTAS
+    (CAR_NOME, CAR_DESC, CAR_TIC_CODIGO)
+    values
+    ('$CAR_NOME', '$CAR_DESC', '$CAR_TIC_CODIGO')
+  ");
 
   if($insertQuery === true) {
-    echo "Inserido com sucesso: $nome / $desc / $tipo <br>";
+    echo "Inserido com sucesso: $CAR_NOME / $CAR_DESC / $CAR_TIC_CODIGO <br>";
   } else {
-    echo "Erro inserir valor: $nome / $desc / $tipo " . $conexao->error;
+    echo "Erro inserir valor: $CAR_NOME / $CAR_DESC / $CAR_TIC_CODIGO " . $conexao->error;
   }
 }
 
