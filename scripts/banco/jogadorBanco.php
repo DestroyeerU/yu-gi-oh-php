@@ -30,7 +30,6 @@ function selectJogador($conexao, $campos) {
 
   while($row = $consulta->fetch_assoc()) {
     array_push($arrayJogadores, $row);
-    // echo "JOG_CODIGO: " . $row["JOG_CODIGO"]. " - JOG_NOME: " . $row["JOG_NOME"] . "<br>";
   }
 
   return $arrayJogadores;

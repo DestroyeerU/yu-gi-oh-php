@@ -1,26 +1,12 @@
 <!-- <html> -->
 
 <?php
-require('./scripts/config.php');
-require('./scripts/jogadorBanco.php');
-require('./scripts/cartaBanco.php');
+require('./scripts/banco/config.php');
+require('./scripts/banco/cartaBanco.php');
 
-criarTabelaJogador($conexao);
-insertJogador($conexao, "Jog1");
-insertJogador($conexao, "Jog2");
-insertJogador($conexao, "Jog3");
-
-criarTabelaCartas($conexao);
 insertCarta($conexao, "Mago Negro", "O implacável", "Monstro");
 insertCarta($conexao, "Olhos Azuis","O invecível", "Monstro");
 insertCarta($conexao, "Olhos Vermelhos","O indestrutível", "Monstro");
-
-$arrayJogadores = selectJogador($conexao, "JOG_CODIGO, JOG_NOME");
-
-echo $arrayJogadores[0]["JOG_NOME"];
-echo $arrayJogadores[0]["JOG_CODIGO"];
-echo $arrayJogadores[1]["JOG_NOME"];
-echo $arrayJogadores[2]["JOG_NOME"];
 
 $arrayCartas = selectCartas($conexao, "CAR_CODIGO, CAR_NOME, CAR_DESC, CAR_TIPO");
 
