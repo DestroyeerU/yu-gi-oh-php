@@ -1,9 +1,9 @@
 <?php
 
-function criarTabelaJogador($conexao) {
+function criarTabelaJogadores($conexao) {
   $criarTabela = $conexao->query('CREATE TABLE TB_JOGADORES (
     JOG_CODIGO INT AUTO_INCREMENT PRIMARY KEY,
-    JOG_NOME VARCHAR(100)
+    JOG_NOME VARCHAR(100) NOT NULL
   )');
 
   if($criarTabela === true) {

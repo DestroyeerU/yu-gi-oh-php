@@ -3,9 +3,9 @@
 function criarTabelaCartas($conexao) {
   $criarTabela = $conexao->query('CREATE TABLE TB_CARTAS (
     CAR_CODIGO INT AUTO_INCREMENT PRIMARY KEY,
-    CAR_NOME VARCHAR(100),
-    CAR_DESC VARCHAR(500),
-    CAR_TIPO VARCHAR(20)
+    CAR_NOME VARCHAR(100) NOT NULL,
+    CAR_DESC VARCHAR(500) NOT NULL,
+    CAR_TIPO VARCHAR(20) NOT NULL
   )');
 
   if($criarTabela === true) {

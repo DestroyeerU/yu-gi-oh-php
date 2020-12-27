@@ -1,5 +1,68 @@
 <html>
 
+<?php
+require('./scripts/banco/config.php');
+require('./scripts/banco/deckBanco.php');
+require('./scripts/banco/cartaBanco.php');
+require('./scripts/banco/cartasDeckBanco.php');
+
+//
+insertDeck($conexao, "Deck Exodia");
+insertDeck($conexao, "Deck Dragão Branco");
+insertDeck($conexao, "Deck Deuses Egípcios");
+
+$arrayDecks = selectDeck($conexao, "DEC_CODIGO, DEC_NOME");
+
+insertCarta($conexao, "Mago Negro", "O implacável", "Monstro");
+insertCarta($conexao, "Olhos Azuis","O invecível", "Monstro");
+
+$arrayCartas = selectCartas($conexao, "CAR_CODIGO, CAR_NOME, CAR_DESC, CAR_TIPO");
+
+insertCartaDeck($conexao, $arrayDecks[0]['DEC_CODIGO'], $arrayCartas[0]["CAR_CODIGO"]);
+insertCartaDeck($conexao, $arrayDecks[0]['DEC_CODIGO'], $arrayCartas[1]["CAR_CODIGO"]);
+
+$arrayCartasDecks = selectCartasDeck($conexao, "DEC_CODIGO, CAR_CODIGO, CAR_NOME");
+
+
+// Deck
+
+echo "DECKS <br>";
+
+echo $arrayDecks[0]['DEC_CODIGO'] . " - ";
+echo $arrayDecks[0]['DEC_NOME'];
+echo "<br> <br>";
+
+
+// Cartas
+
+echo "CARTAS <br>";
+
+echo $arrayCartas[0]["CAR_CODIGO"] . " - ";
+echo $arrayCartas[0]["CAR_NOME"]   . " - ";
+echo $arrayCartas[0]["CAR_TIPO"]   . " - ";
+echo $arrayCartas[0]["CAR_DESC"];
+
+echo "<br>";
+
+echo $arrayCartas[1]["CAR_CODIGO"] . " - ";
+echo $arrayCartas[1]["CAR_NOME"]   . " - ";
+echo $arrayCartas[1]["CAR_TIPO"]   . " - ";
+echo $arrayCartas[1]["CAR_DESC"];
+echo "<br> <br>";
+
+
+// Catas dos Decks
+
+echo "CARTAS DOS DECKS <br>";
+
+echo $arrayCartasDecks[0]["DEC_CODIGO"] . " - ";
+echo $arrayCartasDecks[0]["CAR_CODIGO"] . " - ";
+echo $arrayCartasDecks[0]["CAR_NOME"];
+echo "<br> <br>";
+
+
+?>
+
 <head>
   <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
