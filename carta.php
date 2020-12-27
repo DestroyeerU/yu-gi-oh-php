@@ -1,5 +1,21 @@
 <html>
 
+<?php
+$endereco = "http://127.0.0.1:3307/";
+$usuario = "root";
+$senha = "usbw";
+$banco = "DB_LOJA";
+
+$MySQLi = new mysqli($endereco, $usuario, $senha, $banco);
+if (mysqli_connect_errno()) {
+  die(mysqli_connect_error());
+  exit();
+}
+
+echo "a";
+
+?>
+
 <head>
   <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
