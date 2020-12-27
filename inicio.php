@@ -1,12 +1,13 @@
 <?php
 require('./scripts/banco/config.php');
-require('./scripts/banco/jogadorBanco.php');
-require('./scripts/banco/cartaBanco.php');
-require('./scripts/banco/deckBanco.php');
+require('./scripts/banco/jogadoresBanco.php');
+require('./scripts/banco/cartasBanco.php');
+require('./scripts/banco/decksBanco.php');
 require('./scripts/banco/cartasDeckBanco.php');
 require('./scripts/banco/tiposCartaBanco.php');
 
 reiniciarBanco($conexao, $bancoNome);
+echo "<br>";
 
 // Criar
 criarTabelaTiposCarta($conexao);
@@ -16,10 +17,16 @@ criarTabelaCartas($conexao);
 criarTabelaDecks($conexao);
 criarTabelaCartasDeck($conexao);
 
+echo "<br>";
+
+
 // insert
 insertTipoCarta($conexao, "Monstro");
 insertTipoCarta($conexao, "Magia");
 insertTipoCarta($conexao, "Armadilha");
+
+echo "<br>";
+
 
 // select
 $arrayCartas = selectTiposCarta($conexao, "TIC_CODIGO, TIC_NOME");

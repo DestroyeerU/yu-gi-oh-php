@@ -3,7 +3,7 @@
 
 <?php
 require('./scripts/banco/config.php');
-require('./scripts/banco/jogadorBanco.php');
+require('./scripts/banco/jogadoresBanco.php');
 
 insertJogador($conexao, "Jog1");
 insertJogador($conexao, "Jog2");
@@ -11,10 +11,15 @@ insertJogador($conexao, "Jog3");
 
 $arrayJogadores = selectJogador($conexao, "JOG_CODIGO, JOG_NOME");
 
+echo "<br> JOGADORES <br>";
+
+echo $arrayJogadores[0]["JOG_CODIGO"] . " - ";
 echo $arrayJogadores[0]["JOG_NOME"];
-echo $arrayJogadores[0]["JOG_CODIGO"];
+
+echo "<br>";
+
+echo $arrayJogadores[1]["JOG_CODIGO"] . " - ";
 echo $arrayJogadores[1]["JOG_NOME"];
-echo $arrayJogadores[2]["JOG_NOME"];
 ?>
 
 

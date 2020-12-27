@@ -2,7 +2,7 @@
 
 <?php
 require('./scripts/banco/config.php');
-require('./scripts/banco/cartaBanco.php');
+require('./scripts/banco/cartasBanco.php');
 
 insertCarta($conexao, "Mago Negro", "O implacável", 1);
 insertCarta($conexao, "Olhos Azuis","O invecível", 1);

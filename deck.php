@@ -2,8 +2,8 @@
 
 <?php
 require('./scripts/banco/config.php');
-require('./scripts/banco/deckBanco.php');
-require('./scripts/banco/cartaBanco.php');
+require('./scripts/banco/decksBanco.php');
+require('./scripts/banco/cartasBanco.php');
 require('./scripts/banco/cartasDeckBanco.php');
 
 //
@@ -13,10 +13,10 @@ insertDeck($conexao, "Deck Deuses Egípcios");
 
 $arrayDecks = selectDeck($conexao, "DEC_CODIGO, DEC_NOME");
 
-insertCarta($conexao, "Mago Negro", "O implacável", "Monstro");
-insertCarta($conexao, "Olhos Azuis","O invecível", "Monstro");
+insertCarta($conexao, "Mago Negro", "O implacável", 1);
+insertCarta($conexao, "Olhos Azuis","O invecível", 1);
 
-$arrayCartas = selectCartas($conexao, "CAR_CODIGO, CAR_NOME, CAR_DESC, CAR_TIPO");
+$arrayCartas = selectCartas($conexao, "CAR_CODIGO, CAR_NOME, CAR_DESC, TIC_NOME");
 
 insertCartaDeck($conexao, $arrayDecks[0]['DEC_CODIGO'], $arrayCartas[0]["CAR_CODIGO"]);
 insertCartaDeck($conexao, $arrayDecks[0]['DEC_CODIGO'], $arrayCartas[1]["CAR_CODIGO"]);
@@ -39,14 +39,14 @@ echo "CARTAS <br>";
 
 echo $arrayCartas[0]["CAR_CODIGO"] . " - ";
 echo $arrayCartas[0]["CAR_NOME"]   . " - ";
-echo $arrayCartas[0]["CAR_TIPO"]   . " - ";
+echo $arrayCartas[0]["TIC_NOME"]   . " - ";
 echo $arrayCartas[0]["CAR_DESC"];
 
 echo "<br>";
 
 echo $arrayCartas[1]["CAR_CODIGO"] . " - ";
 echo $arrayCartas[1]["CAR_NOME"]   . " - ";
-echo $arrayCartas[1]["CAR_TIPO"]   . " - ";
+echo $arrayCartas[1]["TIC_NOME"]   . " - ";
 echo $arrayCartas[1]["CAR_DESC"];
 echo "<br> <br>";
 
