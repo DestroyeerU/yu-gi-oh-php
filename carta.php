@@ -1,21 +1,25 @@
-<html>
+<!-- <html> -->
 
 <?php
-$endereco = "http://127.0.0.1:3307/";
-$usuario = "root";
-$senha = "usbw";
-$banco = "DB_LOJA";
+require('./scripts/config.php');
+require('./scripts/jogadorBanco.php');
 
-$MySQLi = new mysqli($endereco, $usuario, $senha, $banco);
-if (mysqli_connect_errno()) {
-  die(mysqli_connect_error());
-  exit();
-}
+criarTabelaJogador($conexao);
+insertJogador($conexao, "Jog1");
+insertJogador($conexao, "Jog2");
+insertJogador($conexao, "Jog3");
 
-echo "a";
+$arrayJogadores = selectJogador($conexao, "JOG_CODIGO, JOG_NOME");
 
+echo $arrayJogadores[0]["JOG_NOME"];
+echo $arrayJogadores[0]["JOG_CODIGO"];
+echo $arrayJogadores[1]["JOG_NOME"];
+echo $arrayJogadores[2]["JOG_NOME"];
+
+
+$conexao->close();
 ?>
-
+<!--
 <head>
   <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -50,4 +54,4 @@ echo "a";
   </form>
 
 </body>
-</html>
+</html> -->
