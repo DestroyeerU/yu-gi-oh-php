@@ -2,24 +2,24 @@
 <html lang="pt-br">
 
 <?php
-require('./scripts/banco/config.php');
-require('./scripts/banco/jogadoresBanco.php');
+// require('./scripts/banco/config.php');
+// require('./scripts/banco/jogadoresBanco.php');
 
-insertJogador($conexao, "Jog1");
-insertJogador($conexao, "Jog2");
-insertJogador($conexao, "Jog3");
+// insertJogador($conexao, "Jog1", "foto.png");
+// insertJogador($conexao, "Jog2", "foto.png");
+// insertJogador($conexao, "Jog3", "foto.png");
 
-$arrayJogadores = selectJogadores($conexao, "JOG_CODIGO, JOG_NOME");
+// $arrayJogadores = selectJogadores($conexao, "JOG_CODIGO, JOG_NOME");
 
-echo "<br> JOGADORES <br>";
+// echo "<br> JOGADORES <br>";
 
-echo $arrayJogadores[0]["JOG_CODIGO"] . " - ";
-echo $arrayJogadores[0]["JOG_NOME"];
+// echo $arrayJogadores[0]["JOG_CODIGO"] . " - ";
+// echo $arrayJogadores[0]["JOG_NOME"];
 
-echo "<br>";
+// echo "<br>";
 
-echo $arrayJogadores[1]["JOG_CODIGO"] . " - ";
-echo $arrayJogadores[1]["JOG_NOME"];
+// echo $arrayJogadores[1]["JOG_CODIGO"] . " - ";
+// echo $arrayJogadores[1]["JOG_NOME"];
 ?>
 
 

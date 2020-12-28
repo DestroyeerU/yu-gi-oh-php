@@ -1,5 +1,11 @@
 <?php
 
+function getCaminhoImagem($nomeImagem) {
+  $caminhoImagem = 'imagens' . DIRECTORY_SEPARATOR . $nomeImagem;
+
+  return $caminhoImagem;
+}
+
 function salvarArquivo($nome) {
   $nomeArquivo = $_FILES[$nome]['name'];
   $nomeTemporarioArquivo = $_FILES[$nome]['tmp_name'];

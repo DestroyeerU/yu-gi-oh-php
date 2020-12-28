@@ -3,6 +3,7 @@
 function criarTabelaJogadores($conexao) {
   $criarTabela = $conexao->query('CREATE TABLE TB_JOGADORES (
     JOG_CODIGO INT AUTO_INCREMENT PRIMARY KEY,
+    JOG_FOTO VARCHAR(50) NOT NULL,
     JOG_NOME VARCHAR(100) NOT NULL
   )');
 
@@ -13,13 +14,13 @@ function criarTabelaJogadores($conexao) {
   }
 }
 
-function insertJogador($conexao, $JOG_NOME) {
-  $insertQuery = $conexao->query("INSERT INTO TB_JOGADORES (JOG_NOME) values ('$JOG_NOME')");
+function insertJogador($conexao, $JOG_NOME, $JOG_FOTO) {
+  $insertQuery = $conexao->query("INSERT INTO TB_JOGADORES (JOG_NOME, JOG_FOTO) values ('$JOG_NOME', '$JOG_FOTO')");
 
   if($insertQuery === true) {
-    echo "Inserido com sucesso: $JOG_NOME <br>";
+    echo "Inserido com sucesso: $JOG_NOME / $JOG_FOTO <br>";
   } else {
-    echo "Erro inserir valor: $JOG_NOME " . $conexao->error;
+    echo "Erro inserir valor: $JOG_NOME / $JOG_FOTO" . $conexao->error;
   }
 }
 
