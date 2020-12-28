@@ -45,5 +45,9 @@
 
     <button type="submit">Salvar</button>
   </form>
+
+  <div>
+    <a href="/Projects/Yu-Gi-Oh/listarJogadores.php">Jogadores</a>
+  </div>
 </body>
 </html>

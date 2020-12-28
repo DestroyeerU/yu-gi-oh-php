@@ -3,6 +3,7 @@
 function criarTabelaCartas($conexao) {
   $criarTabela = $conexao->query('CREATE TABLE TB_CARTAS (
     CAR_CODIGO INT AUTO_INCREMENT PRIMARY KEY,
+    CAR_FOTO VARCHAR(50) NOT NULL,
     CAR_NOME VARCHAR(100) NOT NULL,
     CAR_DESC VARCHAR(500) NOT NULL,
     CAR_TIC_CODIGO INT NOT NULL REFERENCES TB_TIPOSCAR(TIC_CODIGO)
@@ -15,17 +16,17 @@ function criarTabelaCartas($conexao) {
   }
 }
 
-function insertCarta($conexao, $CAR_NOME, $CAR_DESC, $CAR_TIC_CODIGO) {
+function insertCarta($conexao, $CAR_FOTO, $CAR_NOME, $CAR_DESC, $CAR_TIC_CODIGO) {
   $insertQuery = $conexao->query("INSERT INTO TB_CARTAS
-    (CAR_NOME, CAR_DESC, CAR_TIC_CODIGO)
+    (CAR_FOTO, CAR_NOME, CAR_DESC, CAR_TIC_CODIGO)
     values
-    ('$CAR_NOME', '$CAR_DESC', '$CAR_TIC_CODIGO')
+    ('$CAR_FOTO','$CAR_NOME', '$CAR_DESC', '$CAR_TIC_CODIGO')
   ");
 
   if($insertQuery === true) {
-    echo "Inserido com sucesso: $CAR_NOME / $CAR_DESC / $CAR_TIC_CODIGO <br>";
+    echo "Inserido com sucesso: $CAR_FOTO / $CAR_NOME / $CAR_DESC / $CAR_TIC_CODIGO <br>";
   } else {
-    echo "Erro inserir valor: $CAR_NOME / $CAR_DESC / $CAR_TIC_CODIGO " . $conexao->error;
+    echo "Erro inserir valor: $CAR_FOTO / $CAR_NOME / $CAR_DESC / $CAR_TIC_CODIGO " . $conexao->error;
   }
 }
 
