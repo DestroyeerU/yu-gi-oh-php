@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
 <?php
 require('scripts/file.php');
 require('./scripts/banco/config.php');
@@ -11,3 +14,17 @@ $cartipo = $_POST['tipo'];
 insertCarta($conexao, $carfoto, $carnome, $cardesc, $cartipo);
 salvarArquivo('carfoto');
 ?>
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carta Salva</title>
+</head>
+<body>
+
+  <br>
+  <a href="/project/Yu-Gi-Oh/listarCartas.php">Lista de Cartas</a>
+
+</body>
+</html>
