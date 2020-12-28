@@ -1,7 +1,8 @@
-<!-- <html> -->
+<html>
 
 <?php
 require('./scripts/banco/config.php');
+require('./scripts/banco/tiposCartaBanco.php');
 require('./scripts/banco/cartasBanco.php');
 
 insertCarta($conexao, "Mago Negro", "O implacável", 1);
@@ -9,6 +10,7 @@ insertCarta($conexao, "Olhos Azuis","O invecível", 1);
 insertCarta($conexao, "Olhos Vermelhos","O indestrutível", 1);
 
 $arrayCartas = selectCartas($conexao, "CAR_CODIGO, CAR_NOME, CAR_DESC, TIC_NOME");
+$arrayTiposCarta = selectTiposCarta($conexao, "TIC_CODIGO, TIC_NOME");
 
 echo "CARTAS <br>";
 
@@ -25,11 +27,25 @@ echo $arrayCartas[1]["TIC_NOME"]   . " - ";
 echo $arrayCartas[1]["CAR_DESC"];
 echo "<br> <br>";
 
+echo "TIPOS CARTAS <br>";
+
+echo $arrayTiposCarta[0]["TIC_CODIGO"] . " - ";
+echo $arrayTiposCarta[0]["TIC_NOME"];
+echo "<br>";
+
+echo $arrayTiposCarta[1]["TIC_CODIGO"] . " - ";
+echo $arrayTiposCarta[1]["TIC_NOME"];
+echo "<br>";
+
+echo $arrayTiposCarta[2]["TIC_CODIGO"] . " - ";
+echo $arrayTiposCarta[2]["TIC_NOME"];
+echo "<br>";
+
 
 
 $conexao->close();
 ?>
-<!--
+
 <head>
   <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -55,13 +71,14 @@ $conexao->close();
 
     Tipo:<br>
     <select name="time">
-      <option value="monster">Monstro</option>
-      <option value="spell">Magia</option>
-      <option value="trap">Armadilha</option>
+      <?php
+        foreach($arrayTiposCarta as $tipoCarta) {
+          echo "<option value='$tipoCarta[TIC_CODIGO]'>$tipoCarta[TIC_NOME]</option>";
+        }
+      ?>
+
     </select>
-
-
   </form>
 
 </body>
-</html> -->
+</html>

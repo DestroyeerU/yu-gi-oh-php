@@ -58,6 +58,10 @@ echo $arrayPartidas[0]['PAR_RODADAS'] . " - ";
 echo $arrayPartidas[0]['TIV_NOME'];
 echo "<br>";
 
+echo $arrayPartidas[0]['JOGVEN_CODIGO']. " - ";
+echo $arrayPartidas[0]['JOGVEN_NOME'];
+echo "<br>";
+
 echo $arrayPartidas[0]['JOG1_CODIGO']. " - ";
 echo $arrayPartidas[0]['JOG1_NOME'];
 echo "<br>";
