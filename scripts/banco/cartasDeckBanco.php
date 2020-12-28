@@ -36,13 +36,13 @@ function selectCartasDeck($conexao, $campos) {
     JOIN TB_CARTAS ON CAD_CAR_CODIGO = CAR_CODIGO
   ");
 
-  $arrayDecks = [];
+  $array = [];
 
   while($row = $consulta->fetch_assoc()) {
-    array_push($arrayDecks, $row);
+    array_push($array, $row);
   }
 
-  return $arrayDecks;
+  return $array;
 }
 
 ?>

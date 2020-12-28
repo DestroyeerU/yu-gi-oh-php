@@ -11,7 +11,7 @@ function criarTabelaCartas($conexao) {
   if($criarTabela === true) {
     echo "Tabela criada: TB_CARTAS <br>";
   } else {
-    echo "Erro ao criar tabela " . $conexao->error;
+    echo "Erro ao criar tabela TB_CARTAS -> " . $conexao->error;
   }
 }
 
@@ -35,14 +35,13 @@ function selectCartas($conexao, $campos) {
     JOIN TB_TIPOSCAR ON CAR_TIC_CODIGO = TIC_CODIGO
   ");
 
-  $arrayCartas = [];
+  $array = [];
 
   while($row = $consulta->fetch_assoc()) {
-    array_push($arrayCartas, $row);
-    // echo "CAR_CODIGO: " . $row["CAR_CODIGO"]. " - CAR_NOME: " . $row["CAR_NOME"] ." - CAR_DESC: " . $row["CAR_DESC"] ." - CAR_TIPO: " . $row["CAR_TIPO"] . "<br>";
+    array_push($array, $row);
   }
 
-  return $arrayCartas;
+  return $array;
 }
 
 ?>

@@ -9,7 +9,7 @@ function criarTabelaJogadores($conexao) {
   if($criarTabela === true) {
     echo "Tabela criada: TB_JOGADORES <br>";
   } else {
-    echo "Erro ao criar tabela " . $conexao->error;
+    echo "Erro ao criar tabela TB_JOGADORES -> " . $conexao->error;
   }
 }
 
@@ -26,13 +26,13 @@ function insertJogador($conexao, $JOG_NOME) {
 function selectJogador($conexao, $campos) {
   $consulta = $conexao->query("SELECT $campos FROM TB_JOGADORES");
 
-  $arrayJogadores = [];
+  $array = [];
 
   while($row = $consulta->fetch_assoc()) {
-    array_push($arrayJogadores, $row);
+    array_push($arrayJ, $row);
   }
 
-  return $arrayJogadores;
+  return $array;
 }
 
 ?>

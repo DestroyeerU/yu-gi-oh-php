@@ -1,10 +1,9 @@
 <?php
 
 function reiniciarBanco($conexao, $bancoNome) {
-  $dropBanco = $conexao->query("DROP DATABASE IF EXISTS $bancoNome");
+  $dropBanco  = $conexao->query("DROP DATABASE IF EXISTS $bancoNome");
   $criarBanco = $conexao->query("CREATE DATABASE $bancoNome");
 
-  // echo $conexao->error;
   if($criarBanco === true) {
     echo "Banco de dados criado: $bancoNome <br>";
   } else {
@@ -12,6 +11,8 @@ function reiniciarBanco($conexao, $bancoNome) {
     exit();
   }
 
+  date_default_timezone_set('America/Sao_Paulo');
+  mysqli_set_charset($conexao, "utf8");
   $useBanco = $conexao->query("USE $bancoNome");
 }
 
@@ -30,7 +31,6 @@ if(mysqli_connect_error()) {
 
 date_default_timezone_set('America/Sao_Paulo');
 mysqli_set_charset($conexao, "utf8");
-
 
 $useBanco = $conexao->query("USE $bancoNome");
 ?>

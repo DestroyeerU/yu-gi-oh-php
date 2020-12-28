@@ -9,7 +9,7 @@ function criarTabelaTiposCarta($conexao) {
   if($criarTabela === true) {
     echo "Tabela criada: TB_TIPOSCAR <br>";
   } else {
-    echo "Erro ao criar tabela " . $conexao->error;
+    echo "Erro ao criar tabela TB_TIPOSCAR -> " . $conexao->error;
   }
 }
 
@@ -26,13 +26,13 @@ function insertTipoCarta($conexao, $TIC_NOME) {
 function selectTiposCarta($conexao, $campos) {
   $consulta = $conexao->query("SELECT $campos FROM TB_TIPOSCAR");
 
-  $arrayTipos = [];
+  $array = [];
 
   while($row = $consulta->fetch_assoc()) {
-    array_push($arrayTipos, $row);
+    array_push($array, $row);
   }
 
-  return $arrayTipos;
+  return $array;
 }
 
 ?>
