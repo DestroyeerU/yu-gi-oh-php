@@ -23,7 +23,7 @@ function insertDeck($conexao, $DEC_NOME) {
   }
 }
 
-function selectDeck($conexao, $campos) {
+function selectDecks($conexao, $campos) {
   $consulta = $conexao->query("SELECT $campos FROM TB_DECKS");
 
   $array = [];

@@ -23,13 +23,13 @@ function insertJogador($conexao, $JOG_NOME) {
   }
 }
 
-function selectJogador($conexao, $campos) {
+function selectJogadores($conexao, $campos) {
   $consulta = $conexao->query("SELECT $campos FROM TB_JOGADORES");
 
   $array = [];
 
   while($row = $consulta->fetch_assoc()) {
-    array_push($arrayJ, $row);
+    array_push($array, $row);
   }
 
   return $array;

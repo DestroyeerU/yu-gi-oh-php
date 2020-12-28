@@ -6,6 +6,7 @@ require('./scripts/banco/decksBanco.php');
 require('./scripts/banco/cartasDeckBanco.php');
 require('./scripts/banco/tiposCartaBanco.php');
 require('./scripts/banco/tiposVitoriaBanco.php');
+require('./scripts/banco/partidasBanco.php');
 
 reiniciarBanco($conexao, $bancoNome);
 echo "<br>";
@@ -18,6 +19,7 @@ criarTabelaJogadores($conexao);
 criarTabelaCartas($conexao);
 criarTabelaDecks($conexao);
 criarTabelaCartasDeck($conexao);
+criarTabelaPartidas($conexao);
 
 echo "<br>";
 

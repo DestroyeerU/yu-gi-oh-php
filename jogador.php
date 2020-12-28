@@ -9,7 +9,7 @@ insertJogador($conexao, "Jog1");
 insertJogador($conexao, "Jog2");
 insertJogador($conexao, "Jog3");
 
-$arrayJogadores = selectJogador($conexao, "JOG_CODIGO, JOG_NOME");
+$arrayJogadores = selectJogadores($conexao, "JOG_CODIGO, JOG_NOME");
 
 echo "<br> JOGADORES <br>";
 

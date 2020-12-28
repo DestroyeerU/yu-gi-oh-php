@@ -11,7 +11,7 @@ insertDeck($conexao, "Deck Exodia");
 insertDeck($conexao, "Deck Dragão Branco");
 insertDeck($conexao, "Deck Deuses Egípcios");
 
-$arrayDecks = selectDeck($conexao, "DEC_CODIGO, DEC_NOME");
+$arrayDecks = selectDecks($conexao, "DEC_CODIGO, DEC_NOME");
 
 insertCarta($conexao, "Mago Negro", "O implacável", 1);
 insertCarta($conexao, "Olhos Azuis","O invecível", 1);
