@@ -2,6 +2,7 @@
 <html lang="pt-br">
 
 <?php
+require('./scripts/bootstrap.php');
 // require('./scripts/banco/config.php');
 // require('./scripts/banco/jogadoresBanco.php');
 
@@ -47,7 +48,7 @@
   </form>
 
   <div>
-    <a href="/Projects/Yu-Gi-Oh/listarJogadores.php">Jogadores</a>
+    <a href="<?php echo BASE_URL?>/listarJogadores.php">Jogadores</a>
   </div>
 </body>
 </html>

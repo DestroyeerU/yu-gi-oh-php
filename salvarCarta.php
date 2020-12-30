@@ -3,6 +3,8 @@
 
 <?php
 require('scripts/file.php');
+require('./scripts/bootstrap.php');
+
 require('./scripts/banco/config.php');
 require('./scripts/banco/cartasBanco.php');
 
@@ -24,7 +26,7 @@ salvarArquivo('carfoto');
 <body>
 
   <br>
-  <a href="/project/Yu-Gi-Oh/listarCartas.php">Lista de Cartas</a>
+  <a href="<?php echo BASE_URL?>/listarCartas.php">Lista de Cartas</a>
 
 </body>
 </html>

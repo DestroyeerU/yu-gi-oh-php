@@ -1,5 +1,7 @@
 <?php
 require('./scripts/banco/config.php');
+require('./scripts/bootstrap.php');
+
 require('./scripts/banco/decksBanco.php');
 require('./scripts/banco/jogadoresBanco.php');
 require('./scripts/banco/partidasBanco.php');
@@ -34,7 +36,7 @@ require('./scripts/banco/partidasBanco.php');
 <body>
 
   <br>
-  <a href="/Projects/Yu-Gi-Oh/listarPartidas.php">Lista de Partidas</a>
+  <a href="<?php echo BASE_URL?>/listarPartidas.php">Lista de Partidas</a>
 
 </body>
 </html>
