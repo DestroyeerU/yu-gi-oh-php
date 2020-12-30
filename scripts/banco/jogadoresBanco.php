@@ -36,4 +36,18 @@ function selectJogadores($conexao, $campos) {
   return $array;
 }
 
+function selectJogadoresPorNome($conexao, $campos, $whereNome) {
+  $consulta = $conexao->query("SELECT $campos FROM TB_JOGADORES
+    WHERE JOG_NOME LIKE '%$whereNome%'
+  ");
+
+  $array = [];
+
+  while($row = $consulta->fetch_assoc()) {
+    array_push($array, $row);
+  }
+
+  return $array;
+}
+
 ?>

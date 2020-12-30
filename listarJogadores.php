@@ -21,7 +21,7 @@ $arrayJogadores = selectJogadores($conexao, "JOG_CODIGO, JOG_NOME, JOG_FOTO");
   ?>
 
     <li>
-      <img src="<?php echo $caminhoImagem?>" alt="<?php echo $jogador['JOG_NOME']?>">
+      <img src="<?php echo $caminhoImagem?>" alt="<?php echo $jogador['JOG_NOME']?>" width="400">
       <?php echo "$jogador[JOG_CODIGO] - $jogador[JOG_NOME]"  ?>
     </li>
 

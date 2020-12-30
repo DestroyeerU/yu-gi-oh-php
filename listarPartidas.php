@@ -12,6 +12,8 @@ $arrayPartidas = selectPartidas($conexao, "*,
   JOG1.JOG_CODIGO as JOG1_CODIGO, JOG1.JOG_NOME as JOG1_NOME,
   JOG2.JOG_CODIGO as JOG2_CODIGO, JOG2.JOG_NOME as JOG2_NOME
 ");
+
+echo sizeof($arrayPartidas);
 ?>
 
 <head>
