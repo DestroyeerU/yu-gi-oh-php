@@ -35,4 +35,19 @@ function selectDecks($conexao, $campos) {
   return $array;
 }
 
+function selectDecksPorNome($conexao, $campos, $whereDeck) {
+  $consulta = $conexao->query("SELECT $campos FROM TB_DECKS
+    WHERE DEC_NOME LIKE '%$whereDeck%'
+  ");
+
+  $array = [];
+
+  while($row = $consulta->fetch_assoc()) {
+    array_push($array, $row);
+  }
+
+  return $array;
+}
+
+
 ?>

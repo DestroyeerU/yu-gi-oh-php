@@ -20,19 +20,44 @@ $jogador2Deck = $_POST['jogador2Deck'];
 $jogador2PontosVida = $_POST['jogador2PontosVida'];
 $jogador2QtdCartas = $_POST['jogador2QtdCartas'];
 
-$jogador1 = selectJogadoresPorNome($conexao, "JOG_CODIGO", $jogador1Nome)[0];
-$jogador2 = selectJogadoresPorNome($conexao, "JOG_CODIGO", $jogador2Nome)[0];
+$jogadores1 = selectJogadoresPorNome($conexao, "JOG_CODIGO", $jogador1Nome);
+$jogadores2 = selectJogadoresPorNome($conexao, "JOG_CODIGO", $jogador2Nome);
 
+$decksJg1 = selectDecksPorNome($conexao, "DEC_CODIGO", $jogador1Deck);
+$decksJg2 = selectDecksPorNome($conexao, "DEC_CODIGO", $jogador2Deck);
+
+if (sizeof($jogadores1) === 0) {
+  echo "Jogador: $jogador1Nome não encontrado";
+  exit;
+}
+
+if (sizeof($jogadores2) === 0) {
+  echo "Jogador: $jogador1Nome não encontrado";
+  exit;
+}
+
+if (sizeof($decksJg1) === 0) {
+  echo "Deck: $jogador1Deck não encontrado";
+  exit;
+}
+
+if (sizeof($decksJg2) === 0) {
+  echo "Deck: $jogador2Deck não encontrado";
+  exit;
+}
+
+$jogador1 = $jogadores1[0];
+$jogador2 = $jogadores2[0];
+$deckJg1 = $decksJg1[0];
+$deckJg2 = $decksJg2[0];
 
 $jogadorVitoriosoCodigo = (int)$jogadorVitorioso === 1 ? $jogador1['JOG_CODIGO'] : $jogador2['JOG_CODIGO'];
 
-// echo "<br>";
-
 insertPartida(
   $conexao, $turnos, $formaVitoria, $jogadorVitoriosoCodigo,
-  $jogador1['JOG_CODIGO'], $jogador1Deck, $jogador1PontosVida, $jogador1QtdCartas,
-  $jogador2['JOG_CODIGO'], $jogador2Deck, $jogador2PontosVida, $jogador2QtdCartas
-)
+  $jogador1['JOG_CODIGO'], $deckJg1['DEC_CODIGO'], $jogador1PontosVida, $jogador1QtdCartas,
+  $jogador2['JOG_CODIGO'], $deckJg2['DEC_CODIGO'], $jogador2PontosVida, $jogador2QtdCartas
+);
 
 ?>
 

@@ -6,13 +6,15 @@ require('./scripts/banco/config.php');
 require('./scripts/banco/decksBanco.php');
 require('./scripts/banco/jogadoresBanco.php');
 require('./scripts/banco/partidasBanco.php');
+require('./scripts/banco/tiposVitoriaBanco.php');
 
+$arrayTiposVitoria = selectTiposVitoria($conexao, "TIV_CODIGO, TIV_NOME");
 
 // // Jogadores
 
-// insertJogador($conexao, "Jog1");
-// insertJogador($conexao, "Jog2");
-// insertJogador($conexao, "Jog3");
+// insertJogador($conexao, "Jog1". "foto");
+// insertJogador($conexao, "Jog2". "foto");
+// insertJogador($conexao, "Jog3". "foto");
 
 // insertDeck($conexao, "Deck Exodia");
 // insertDeck($conexao, "Deck Dragão Branco");
@@ -98,9 +100,11 @@ require('./scripts/banco/partidasBanco.php');
       <div>
         <label for="formaVitoria">Selecione a forma de vitória</label>
         <select name="formaVitoria" id="formaVitoria">
-          <option value="Acabaram-se os Pontos de Vida">Acabaram-se os Pontos de Vida</option>
-          <option value="Acabaram-se as cartas">Acabaram-se as cartas</option>
-          <option value="Vitoria Especial">Vitoria Especial</option>
+          <?php
+            foreach($arrayTiposVitoria as $tipoVitoria) {
+              echo "<option value='$tipoVitoria[TIV_CODIGO]'>$tipoVitoria[TIV_NOME]</option>";
+            }
+          ?>
         </select>
       </div>
 
