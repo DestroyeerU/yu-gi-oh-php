@@ -46,9 +46,11 @@ function insertPartida(
   ");
 
   if($insertQuery === true) {
-    echo "Inserido com sucesso: $PAR_RODADAS / $PAR_TIV_CODIGO <br>";
+    echo "Inserido com sucesso: $PAR_RODADAS / $PAR_TIV_CODIGO / $PAR_JOGVEN_CODIGO <br>";
+    echo "Inserido com sucesso: $PAR_JOG1_CODIGO / $PAR_JOG1_DEC_CODIGO / $PAR_JOG1_VIDAFINAL / $PAR_JOG1_QTDCARTASFINAL <br>";
+    echo "Inserido com sucesso: $PAR_JOG2_CODIGO / $PAR_JOG2_DEC_CODIGO / $PAR_JOG2_VIDAFINAL / $PAR_JOG2_QTDCARTASFINAL <br>";
   } else {
-    echo "Erro inserir valor: $PAR_RODADAS / $PAR_TIV_CODIGO " . $conexao->error;
+    echo "Erro inserir valor: $PAR_RODADAS / $PAR_TIV_CODIGO / $PAR_JOGVEN_CODIGO " . $conexao->error;
   }
 }
 
