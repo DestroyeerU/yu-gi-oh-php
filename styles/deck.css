@@ -1,0 +1,27 @@
+ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+li {
+  cursor: pointer;
+  list-style: none;
+
+  padding: 8px;
+  margin: 8px;
+
+  border-radius: 4px;
+
+  border: 1px solid transparent;
+}
+
+li.active {
+  border: 1px solid #4361ee;
+}
+
+li img {
+  width: 200px;
+  height: 230px;
+
+  object-fit: cover;
+}
