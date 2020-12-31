@@ -2,28 +2,52 @@
 <html lang="pt-br">
 
 <?php
+function formatDeck($deck, $cartas) {
+  return [
+    'DEC_CODIGO' => $deck['DEC_CODIGO'],
+    'DEC_NOME' => $deck['DEC_NOME'],
+    'DEC_CARTAS' => $cartas
+  ];
+}
+
+function formatCarta($deck) {
+  return [
+    'CAR_CODIGO' => $deck['CAR_CODIGO'],
+    'CAR_FOTO' => $deck['CAR_FOTO'],
+    'CAR_NOME' => $deck['CAR_NOME']
+  ];
+}
+
+function formatDecks($arrayDecks) {
+  $ultimoDeck = $arrayDecks[0];
+
+  $arrayDecksFormatado = [];
+  $arrayUltimoDeckCartas = [];
+
+  foreach ($arrayDecks as $deck) {
+    $novoDeck = $ultimoDeck['DEC_CODIGO'] !== $deck['DEC_CODIGO'];
+
+    if ($novoDeck) {
+      $arrayDecksFormatado[] = formatDeck($ultimoDeck, $arrayUltimoDeckCartas);
+
+      $ultimoDeck = $deck;
+      $arrayUltimoDeckCartas = [];
+    }
+
+    $arrayUltimoDeckCartas[] = formatCarta($deck);
+  }
+
+  $arrayDecksFormatado[] = formatDeck($ultimoDeck, $arrayUltimoDeckCartas);
+
+  return $arrayDecksFormatado;
+}
+
 require('./scripts/file.php');
 require('./scripts/banco/config.php');
 require('./scripts/banco/decksBanco.php');
 
-$arrayDecks = selectDecks($conexao, "DEC_CODIGO, DEC_NOME, CAR_CODIGO");
-// $arrayCartasDecks = selectCartasDeck($conexao, "DEC_CODIGO, CAR_CODIGO, CAR_NOME");
-
-echo $arrayDecks[0]['DEC_CODIGO'] . " - " . $arrayDecks[0]['CAR_CODIGO'] . '<br>';
-echo $arrayDecks[1]['DEC_CODIGO'] . " - " . $arrayDecks[1]['CAR_CODIGO'] . '<br>';
-echo $arrayDecks[2]['DEC_CODIGO'] . " - " . $arrayDecks[2]['CAR_CODIGO'] . '<br>';
-echo $arrayDecks[3]['DEC_CODIGO'] . " - " . $arrayDecks[3]['CAR_CODIGO'] . '<br>';
-
-// $lastDeckCodigo = $$arrayDecks[0]['DEC_CODIGO'];
-// $arrayDecksFormatado = [];
-// $index = 0;
-
-// foreach ($arrayDecks as $deck) {
-//   if (!$lastDeckCodigo !== $arrayDecks[0]['DEC_CODIGO']) {
-//     // array_push($arrayDecks, )
-//   }
-// }
-
+$arrayDecks = selectDecks($conexao, "DEC_CODIGO, DEC_NOME, CAR_CODIGO, CAR_FOTO, CAR_NOME");
+$arrayDecksFormatado = formatDecks($arrayDecks);
 ?>
 
 <head>
@@ -32,19 +56,27 @@ echo $arrayDecks[3]['DEC_CODIGO'] . " - " . $arrayDecks[3]['CAR_CODIGO'] . '<br>
   <title>Decks</title>
 </head>
 <body>
-<!--
+
   <ul>
-    <?php foreach($arrayDecks as $deck) {
-    // $caminhoImagem = getCaminhoImagem($carta['CAR_FOTO']);
-    ?>
+    <?php foreach($arrayDecksFormatado as $deck) {?>
       <h3><?php echo $deck['DEC_NOME']?></h3>
 
       <li>
-        <img src="" alt="">
+        <ul style="display: flex; flex-wrap: wrap;">
+          <?php foreach($deck['DEC_CARTAS'] as $carta) {
+            $caminhoImagem = getCaminhoImagem($carta['CAR_FOTO']);
+          ?>
+
+            <li>
+              <img src="<?php echo $caminhoImagem?>" alt="<?php echo $carta['CAR_NOME']?>" width="200">
+            </li>
+
+         <?php }?>
+        </ul>
       </li>
 
     <?php }?>
-  </ul> -->
+  </ul>
 
 </body>
 </html>

@@ -24,7 +24,17 @@ function insertDeck($conexao, $DEC_NOME) {
 }
 
 function selectDecks($conexao, $campos) {
-  $consulta = $conexao->query("SELECT $campos FROM TB_DECKS");
+  $consulta = $conexao->query("SELECT $campos
+    -- GROUP_CONCAT(CAR_FOTO) as CAR_FOTOS
+    FROM TB_DECKS
+
+    JOIN TB_CARSDECK ON DEC_CODIGO = CAD_DEC_CODIGO
+    JOIN TB_CARTAS ON CAD_CAR_CODIGO = CAR_CODIGO
+
+    -- GROUP BY DEC_CODIGO
+  ");
+
+  echo $conexao->error;
 
   $array = [];
 
