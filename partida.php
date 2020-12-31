@@ -31,7 +31,9 @@ $arrayTiposVitoria = selectTiposVitoria($conexao, "TIV_CODIGO, TIV_NOME");
 // $arrayPartidas = selectPartidas($conexao, "*,
 //   JOGVEN.JOG_CODIGO as JOGVEN_CODIGO, JOGVEN.JOG_NOME as JOGVEN_NOME,
 //   JOG1.JOG_CODIGO as JOG1_CODIGO, JOG1.JOG_NOME as JOG1_NOME,
-//   JOG2.JOG_CODIGO as JOG2_CODIGO, JOG2.JOG_NOME as JOG2_NOME
+//   JOG2.JOG_CODIGO as JOG2_CODIGO, JOG2.JOG_NOME as JOG2_NOME,
+//   DEC1.DEC_CODIGO as DEC1_CODIGO, DEC1.DEC_NOME as DEC1_NOME,
+//   DEC2.DEC_CODIGO as DEC2_CODIGO, DEC2.DEC_NOME as DEC2_NOME
 // ");
 
 
@@ -173,3 +175,4 @@ $arrayTiposVitoria = selectTiposVitoria($conexao, "TIV_CODIGO, TIV_NOME");
 </form>
 </body>
 </html>
+
