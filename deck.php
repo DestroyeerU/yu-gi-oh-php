@@ -1,4 +1,4 @@
-<html>
+<?php include("design1.php"); ?>
 
 <?php
 require('./scripts/file.php');
@@ -86,7 +86,7 @@ $arrayCartas = selectCartas($conexao, "CAR_CODIGO, CAR_NOME, CAR_DESC, CAR_FOTO,
     <input type="text" name="nome"><br>
 
     <input type="hidden" name="cartas" id="cartas" >
-    Cartas:<br>
+    Selecione as Cartas:<br>
     <ul>
       <?php foreach($arrayCartas as $carta) {
         $caminhoImagem = getCaminhoImagem($carta['CAR_FOTO']);
@@ -106,4 +106,4 @@ $arrayCartas = selectCartas($conexao, "CAR_CODIGO, CAR_NOME, CAR_DESC, CAR_FOTO,
 
   <script src="./scripts/javascript/deck.js"></script>
 </body>
-</html>
+<?php include("design2.php"); ?>

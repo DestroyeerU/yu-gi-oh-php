@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<?php include("design1.php"); ?>
 
 <?php
 require('./scripts/bootstrap.php');
@@ -47,8 +46,5 @@ require('./scripts/bootstrap.php');
     <button type="submit">Salvar</button>
   </form>
 
-  <div>
-    <a href="<?php echo BASE_URL?>/listarJogadores.php">Jogadores</a>
-  </div>
 </body>
-</html>
+<?php include("design2.php"); ?>

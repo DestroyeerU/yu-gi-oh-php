@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<?php include("design1.php"); ?>
 
 <?php
 require('scripts/file.php');
@@ -26,7 +25,9 @@ salvarArquivo('carfoto');
 <body>
 
   <br>
-  <a href="<?php echo BASE_URL?>/listarCartas.php">Lista de Cartas</a>
+  <a href="<?php echo BASE_URL?>/carta.php">Voltar</a>
+  <br>
+  <a href="<?php echo BASE_URL?>/listarCartas.php">Ir para a Listagem de Cartas</a>
 
 </body>
-</html>
+<?php include("design2.php"); ?>

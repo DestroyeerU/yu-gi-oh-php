@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<?php include("design1.php"); ?>
 
 <?php
 require('./scripts/banco/config.php');
@@ -29,7 +28,8 @@ echo sizeof($arrayPartidas);
   ?>
 
     <li>
-    Dados da Partida<br>
+    <?php echo "Dados da Partida $partida[PAR_CODIGO]"?>
+      <br>
       <?php echo "Rounds: $partida[PAR_RODADAS] /Tipo de Vitória: $partida[TIV_NOME] /Vencedor: $partida[JOGVEN_NOME]"?>
       <br>
       <?php echo "Jogador 1: $partida[JOG1_NOME] /Seu Deck: $partida[DEC1_NOME] /Quantidade Final de Pontos: $partida[PAR_JOG1_VIDAFINAL] /Cartas Restantes: $partida[PAR_JOG1_QTDCARTASFINAL]"?>
@@ -40,4 +40,4 @@ echo sizeof($arrayPartidas);
   <?php } ?>
   </ul>
 </body>
-</html>
+<?php include("design2.php"); ?>

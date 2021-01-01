@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<?php include("design1.php"); ?>
 
 <?php
 function formatDeck($deck, $cartas) {
@@ -79,4 +78,4 @@ $arrayDecksFormatado = formatDecks($arrayDecks);
   </ul>
 
 </body>
-</html>
+<?php include("design2.php"); ?>

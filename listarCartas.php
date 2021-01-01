@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<?php include("design1.php"); ?>
 
 <?php
 require('./scripts/banco/config.php');
@@ -21,11 +20,11 @@ $arrayCartas = selectCartas($conexao, "CAR_CODIGO, CAR_NOME, CAR_DESC, CAR_FOTO,
   ?>
 
     <li>
-      <img src="<?php echo $caminhoImagem?>" alt="<?php echo $carta['CAR_NOME']?>">
+      <img src="<?php echo $caminhoImagem?>" alt="<?php echo $carta['CAR_NOME']?>" width="200">
       <?php echo "$carta[CAR_CODIGO] - $carta[CAR_NOME] - $carta[TIC_NOME]"  ?>
     </li>
 
   <?php } ?>
   </ul>
 </body>
-</html>
+<?php include("design2.php"); ?>

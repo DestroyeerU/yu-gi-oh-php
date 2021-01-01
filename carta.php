@@ -1,4 +1,4 @@
-<html>
+<?php include("design1.php"); ?>
 
 <?php
 require('./scripts/banco/config.php');
@@ -85,4 +85,4 @@ $arrayTiposCarta = selectTiposCarta($conexao, "TIC_CODIGO, TIC_NOME");
   </form>
 
 </body>
-</html>
+<?php include("design2.php"); ?>

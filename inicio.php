@@ -1,3 +1,5 @@
+<?php include("design1.php"); ?>
+
 <?php
 require('./scripts/banco/config.php');
 require('./scripts/banco/jogadoresBanco.php');
@@ -69,3 +71,5 @@ echo $arrayTiposVitoria[2]["TIV_NOME"];
 echo "<br> <br>";
 
 ?>
+
+<?php include("design2.php"); ?>

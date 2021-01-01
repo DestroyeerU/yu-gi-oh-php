@@ -1,3 +1,5 @@
+<?php include("design1.php"); ?>
+
 <?php
 require('./scripts/banco/config.php');
 require('./scripts/bootstrap.php');
@@ -69,7 +71,9 @@ insertPartida(
 <body>
 
   <br>
-  <a href="<?php echo BASE_URL?>/listarPartidas.php">Lista de Partidas</a>
+  <a href="<?php echo BASE_URL?>/partida.php">Voltar</a>
+  <br>
+  <a href="<?php echo BASE_URL?>/listarPartidas.php">Ir para a Listagem de Partidas</a>
 
 </body>
-</html>
+<?php include("design2.php"); ?>

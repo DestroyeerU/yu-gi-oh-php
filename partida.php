@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<?php include("design1.php"); ?>
 
 <?php
 require('./scripts/banco/config.php');
@@ -174,5 +173,5 @@ $arrayTiposVitoria = selectTiposVitoria($conexao, "TIV_CODIGO, TIV_NOME");
 
 </form>
 </body>
-</html>
+<?php include("design2.php"); ?>
 
