@@ -6,12 +6,12 @@ header {
   margin: 20px 10px 20px;
 }
 
-ul {
+.list {
   display: flex;
   flex-wrap: wrap;
 }
 
-ul li {
+.list-item {
   margin: 10px
 }
 

@@ -25,12 +25,12 @@ $arrayJogadores = selectJogadores($conexao, "JOG_CODIGO, JOG_NOME, JOG_FOTO");
       <a href="<?php echo BASE_URL?>/jogador.php" class="btn btn-primary">Adicionar Jogador</a>
     </header>
 
-    <ul>
+    <ul class="list">
     <?php foreach($arrayJogadores as $jogador) {
       $caminhoImagem = getCaminhoImagem($jogador['JOG_FOTO']);
     ?>
 
-      <li>
+      <li class="list-item">
         <div class="card" style="width: 18rem;">
           <img class="item-image" src="<?php echo $caminhoImagem?>" alt="<?php echo $jogador['JOG_NOME']?>" >
           <div class="card-body">

@@ -19,7 +19,7 @@ $arrayCartas = selectCartas($conexao, "CAR_CODIGO, CAR_NOME, CAR_DESC, CAR_FOTO,
   <title>Listar Cartas</title>
 
   <style>
-    ul li .item-image  {
+    .item-image {
       object-fit: contain;
     }
 
@@ -32,12 +32,12 @@ $arrayCartas = selectCartas($conexao, "CAR_CODIGO, CAR_NOME, CAR_DESC, CAR_FOTO,
       <a href="<?php echo BASE_URL?>/carta.php" class="btn btn-primary">Adicionar Carta</a>
     </header>
 
-    <ul>
+    <ul class="list">
     <?php foreach($arrayCartas as $carta) {
       $caminhoImagem = getCaminhoImagem($carta['CAR_FOTO']);
     ?>
 
-      <li>
+      <li class="list-item">
         <div class="card" style="width: 18rem;">
           <img class="item-image" src="<?php echo $caminhoImagem?>" alt="<?php echo $carta['CAR_NOME']?>" >
           <div class="card-body">
