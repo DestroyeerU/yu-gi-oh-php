@@ -37,7 +37,6 @@ require('./scripts/bootstrap.php');
   <form class="form-container" action="salvarJogador.php" method="post" enctype="multipart/form-data">
     <h1 class="form-title">Cadastro de Jogador</h1>
 
-
     <div class="form-group">
       <label for="nome">Nome do Jogador</label>
       <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite seu nome">
@@ -62,18 +61,3 @@ require('./scripts/bootstrap.php');
 
 </body>
 <?php include("design2.php"); ?>
-
-<!-- <form>
-  <div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-  </div>
-
-  <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-  </div>
-
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form> -->

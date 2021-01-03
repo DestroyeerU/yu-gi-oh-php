@@ -53,36 +53,63 @@ $arrayTiposCarta = selectTiposCarta($conexao, "TIC_CODIGO, TIC_NOME");
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="stylesheet" href="styles/global.css">
-  <link rel="stylesheet" href="styles/partida.css">
+  <link rel="stylesheet" href="componentes/areaFileSelector/areaFileSelector.css">
+
+  <!-- <link rel="stylesheet" href="styles/partida.css"> -->
 
   <title>Cadastro de Cartas</title>
+
+  <style>
+    .form-title {
+      margin-bottom: 10px;
+    }
+    .form-btn {
+      margin-bottom: 10px;
+    }
+  </style>
 </head>
 <body>
-  <h1>Registro de Cartas</h1><br>
 
-  <form action="salvarCarta.php" method="POST" enctype="multipart/form-data">
+  <form class="form-container" action="salvarCarta.php" method="POST" enctype="multipart/form-data">
+  <h1 class="form-title">Registro de Cartas</h1>
 
-    Foto:<br>
-    <input name="carfoto" type="file" /><br>
+  <div class="form-group">
+    <label for="nome">Nome</label>
+    <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite o nome da carta">
+  </div>
 
-    Nome:<br>
-    <input type="text" name="nome"><br>
+  <div class="form-group">
+    <label for="nome">Descriçao</label>
+    <textarea class="form-control" id="desc" name="desc" rows="4" cols="30"></textarea>
+  </div>
 
-    Descriçao:<br>
-    <textarea id="descricao" name="desc" rows="8" cols="30"></textarea><br>
 
-    Tipo:<br>
-    <select name="tipo">
-      <?php
-        foreach($arrayTiposCarta as $tipoCarta) {
-          echo "<option value='$tipoCarta[TIC_CODIGO]'>$tipoCarta[TIC_NOME]</option>";
-        }
-      ?>
-
+  <div class="form-group">
+    <label for="tipo">Tipo de Carta</label>
+    <select multiple class="form-control" id="tipo" name="tipo">
+    <?php
+      foreach($arrayTiposCarta as $tipoCarta) {
+        echo "<option value='$tipoCarta[TIC_CODIGO]'>$tipoCarta[TIC_NOME]</option>";
+      }
+    ?>
     </select>
+  </div>
 
-    <button type="submit">Salvar</button>
+
+  <label class="custom-file-upload">
+    <input type="file" onchange="loadImagePreview()" name="carfoto" id="carfoto" />
+
+    <div class="default">
+      <img src="assets/img/upload.svg" alt="upload">
+      Selecione a foto da carta
+    </div>
+
+    <img class="upload-preview" id="uploadPreview">
+  </label>
+
+    <button type="submit" class="btn btn-primary form-btn">Salvar</button>
   </form>
 
+  <script src="componentes/areaFileSelector/areaFileSelector.js"></script>
 </body>
 <?php include("design2.php"); ?>
