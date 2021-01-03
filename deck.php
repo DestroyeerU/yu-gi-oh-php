@@ -78,15 +78,18 @@ $arrayCartas = selectCartas($conexao, "CAR_CODIGO, CAR_NOME, CAR_DESC, CAR_FOTO,
 </head>
 <body>
 
-  <h1>Registro de Decks</h1><br>
+  <form class="form-container" id="deckForm" name="deckForm" action="salvarDeck.php" method="POST">
+    <h1 class="form-title">Registro de Decks</h1>
 
-  <form id="deckForm" name="deckForm" action="salvarDeck.php" method="POST">
 
-    Nome:<br>
-    <input type="text" name="nome"><br>
+    <div class="form-group">
+      <label for="nome">Nome do Deck</label>
+      <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite o nome do Deck">
+    </div>
 
+
+    <label for="cartas"> Selecione as Cartas:</label>
     <input type="hidden" name="cartas" id="cartas" >
-    Selecione as Cartas:<br>
     <ul>
       <?php foreach($arrayCartas as $carta) {
         $caminhoImagem = getCaminhoImagem($carta['CAR_FOTO']);
@@ -100,7 +103,7 @@ $arrayCartas = selectCartas($conexao, "CAR_CODIGO, CAR_NOME, CAR_DESC, CAR_FOTO,
       <?php } ?>
     </ul>
 
-     <button onclick="sumbitDeckForm()">Salvar</button>
+    <button class="btn btn-primary form-btn" onclick="sumbitDeckForm()">Salvar</button>
   </form>
 
 
