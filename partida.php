@@ -102,22 +102,22 @@ $arrayTiposVitoria = selectTiposVitoria($conexao, "TIV_CODIGO, TIV_NOME");
 
     <div class="form-group">
       <label for="jogador1Nome">Nome do jogador 1</label>
-      <input class="form-control" type="text" name="jogador1Nome" id="jogador1Nome">
+      <input class="form-control" type="text" name="jogador1Nome" id="jogador1Nome" required>
     </div>
 
     <div class="form-group">
       <label for="jogador1Deck">Deck do jogador 1</label>
-      <input class="form-control" type="text" name="jogador1Deck" id="jogador1Deck">
+      <input class="form-control" type="text" name="jogador1Deck" id="jogador1Deck" required>
     </div>
 
     <div class="form-group">
       <label for="jogador1PontosVida">Pontos de vida final do jogador 1</label>
-      <input class="form-control" type="text" name="jogador1PontosVida" id="jogador1PontosVida">
+      <input class="form-control" type="text" name="jogador1PontosVida" id="jogador1PontosVida" required>
     </div>
 
     <div class="form-group">
       <label for="jogador1QtdCartas">Quantidade de cartas final do jogador 1</label>
-      <input class="form-control" type="text" name="jogador1QtdCartas" id="jogador1QtdCartas">
+      <input class="form-control" type="text" name="jogador1QtdCartas" id="jogador1QtdCartas" required>
     </div>
 
   </section>
@@ -127,22 +127,22 @@ $arrayTiposVitoria = selectTiposVitoria($conexao, "TIV_CODIGO, TIV_NOME");
 
     <div class="form-group">
       <label for="jogador2Nome">Nome do jogador 2</label>
-      <input class="form-control" type="text" name="jogador2Nome" id="jogador2Nome">
+      <input class="form-control" type="text" name="jogador2Nome" id="jogador2Nome" required>
     </div>
 
     <div class="form-group">
       <label for="jogador2Deck">Deck do jogador 2</label>
-      <input class="form-control" type="text" name="jogador2Deck" id="jogador2Deck">
+      <input class="form-control" type="text" name="jogador2Deck" id="jogador2Deck" required>
     </div>
 
     <div class="form-group">
       <label for="jogador2PontosVida">Pontos de vida final do jogador 2</label>
-      <input class="form-control" type="text" name="jogador2PontosVida" id="jogador2PontosVida">
+      <input class="form-control" type="text" name="jogador2PontosVida" id="jogador2PontosVida" required>
     </div>
 
     <div class="form-group">
       <label for="jogador2QtdCartas">Quantidade de cartas final do jogador 2</label>
-      <input class="form-control" type="text" name="jogador2QtdCartas" id="jogador2QtdCartas">
+      <input class="form-control" type="text" name="jogador2QtdCartas" id="jogador2QtdCartas" required>
     </div>
 
   </section>
@@ -153,17 +153,17 @@ $arrayTiposVitoria = selectTiposVitoria($conexao, "TIV_CODIGO, TIV_NOME");
 
     <div class="form-group">
       <label for="jogadorVitorioso">Digite o jogador vitorioso</label>
-      <input class="form-control" type="number" name="jogadorVitorioso" id="jogadorVitorioso" placeholder="1 ou 2">
+      <input class="form-control" type="number" name="jogadorVitorioso" id="jogadorVitorioso" placeholder="1 ou 2" required>
     </div>
 
     <div class="form-group">
       <label for="turnos">Digite a quantidade de turnos</label>
-      <input class="form-control" type="number" name="turnos" id="turnos" placeholder="1, 2, 3, ...">
+      <input class="form-control" type="number" name="turnos" id="turnos" placeholder="1, 2, 3, ..." required>
     </div>
 
     <div class="form-group">
       <label for="formaVitoria">Selecione a forma de vitória</label>
-      <select multiple class="form-control" name="formaVitoria" id="formaVitoria">
+      <select multiple class="form-control" name="formaVitoria" id="formaVitoria" required>
         <?php
           foreach($arrayTiposVitoria as $tipoVitoria) {
             echo "<option value='$tipoVitoria[TIV_CODIGO]'>$tipoVitoria[TIV_NOME]</option>";

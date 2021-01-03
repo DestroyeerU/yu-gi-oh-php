@@ -72,7 +72,7 @@ $arrayTiposCarta = selectTiposCarta($conexao, "TIC_CODIGO, TIC_NOME");
 
   <div class="form-group">
     <label for="nome">Nome</label>
-    <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite o nome da carta">
+    <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite o nome da carta" required>
   </div>
 
   <div class="form-group">
@@ -83,7 +83,7 @@ $arrayTiposCarta = selectTiposCarta($conexao, "TIC_CODIGO, TIC_NOME");
 
   <div class="form-group">
     <label for="tipo">Tipo de Carta</label>
-    <select multiple class="form-control" id="tipo" name="tipo">
+    <select multiple class="form-control" id="tipo" name="tipo" required>
     <?php
       foreach($arrayTiposCarta as $tipoCarta) {
         echo "<option value='$tipoCarta[TIC_CODIGO]'>$tipoCarta[TIC_NOME]</option>";

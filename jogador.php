@@ -39,7 +39,7 @@ require('./scripts/bootstrap.php');
 
     <div class="form-group">
       <label for="nome">Nome do Jogador</label>
-      <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite seu nome">
+      <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite seu nome" required>
     </div>
 
     <label class="custom-file-upload">
