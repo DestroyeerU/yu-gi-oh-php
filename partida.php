@@ -80,10 +80,7 @@ $arrayTiposVitoria = selectTiposVitoria($conexao, "TIV_CODIGO, TIV_NOME");
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="stylesheet" href="styles/global.css">
-  <!-- <link rel="stylesheet" href="styles/partida.css"> -->
-
   <title>Cadastro de Cartas</title>
-
 
   <style>
     .form-title {
@@ -180,4 +177,3 @@ $arrayTiposVitoria = selectTiposVitoria($conexao, "TIV_CODIGO, TIV_NOME");
 </form>
 </body>
 <?php include("design2.php"); ?>
-

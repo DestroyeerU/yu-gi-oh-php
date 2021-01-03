@@ -1,0 +1,22 @@
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin: 20px 10px 20px;
+}
+
+ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+ul li {
+  margin: 10px
+}
+
+.user-image {
+  max-height: 300px;
+
+  object-fit: cover;
+}

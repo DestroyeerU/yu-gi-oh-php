@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+ul {
+  list-style: none;
+}
+
 .form-container {
   display: flex;
   flex-direction: column;
@@ -23,3 +27,4 @@
 
   margin-bottom: 10px;
 }
+
