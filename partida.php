@@ -80,97 +80,103 @@ $arrayTiposVitoria = selectTiposVitoria($conexao, "TIV_CODIGO, TIV_NOME");
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="stylesheet" href="styles/global.css">
-  <link rel="stylesheet" href="styles/partida.css">
+  <!-- <link rel="stylesheet" href="styles/partida.css"> -->
 
   <title>Cadastro de Cartas</title>
+
+
+  <style>
+    .form-title {
+      margin-bottom: 0;
+    }
+
+    h2 {
+      margin-top: 30px;
+    }
+  </style>
 </head>
 <body>
-  <form action="salvarPartida.php" method="post">
+  <form class="form-container" action="salvarPartida.php" method="post">
 
-  <h1>Cadastro de Partida</h1>
+  <h1 class="form-title">Cadastro de Partida</h1>
 
-  <div class="row">
-    <section>
-      <h2>Dados Gerais</h2>
+  <section>
+    <h2>Dados do Jogador 1</h2>
 
-      <div>
-        <label for="turnos">Digite a quantidade de turnos</label>
-        <input type="number" name="turnos" id="turnos" placeholder="1, 2, 3, ...">
-      </div>
+    <div class="form-group">
+      <label for="jogador1Nome">Nome do jogador 1</label>
+      <input class="form-control" type="text" name="jogador1Nome" id="jogador1Nome">
+    </div>
 
-      <div>
-        <label for="formaVitoria">Selecione a forma de vitória</label>
-        <select name="formaVitoria" id="formaVitoria">
-          <?php
-            foreach($arrayTiposVitoria as $tipoVitoria) {
-              echo "<option value='$tipoVitoria[TIV_CODIGO]'>$tipoVitoria[TIV_NOME]</option>";
-            }
-          ?>
-        </select>
-      </div>
+    <div class="form-group">
+      <label for="jogador1Deck">Deck do jogador 1</label>
+      <input class="form-control" type="text" name="jogador1Deck" id="jogador1Deck">
+    </div>
 
-      <div>
-        <label for="jogadorVitorioso">Diigite o jogador vitorioso</label>
-        <input type="number" name="jogadorVitorioso" id="jogadorVitorioso" placeholder="1 ou 2">
-      </div>
+    <div class="form-group">
+      <label for="jogador1PontosVida">Pontos de vida final do jogador 1</label>
+      <input class="form-control" type="text" name="jogador1PontosVida" id="jogador1PontosVida">
+    </div>
+
+    <div class="form-group">
+      <label for="jogador1QtdCartas">Quantidade de cartas final do jogador 1</label>
+      <input class="form-control" type="text" name="jogador1QtdCartas" id="jogador1QtdCartas">
+    </div>
+
+  </section>
+
+  <section>
+    <h2>Dados do Jogador 2</h2>
+
+    <div class="form-group">
+      <label for="jogador2Nome">Nome do jogador 2</label>
+      <input class="form-control" type="text" name="jogador2Nome" id="jogador2Nome">
+    </div>
+
+    <div class="form-group">
+      <label for="jogador2Deck">Deck do jogador 2</label>
+      <input class="form-control" type="text" name="jogador2Deck" id="jogador2Deck">
+    </div>
+
+    <div class="form-group">
+      <label for="jogador2PontosVida">Pontos de vida final do jogador 2</label>
+      <input class="form-control" type="text" name="jogador2PontosVida" id="jogador2PontosVida">
+    </div>
+
+    <div class="form-group">
+      <label for="jogador2QtdCartas">Quantidade de cartas final do jogador 2</label>
+      <input class="form-control" type="text" name="jogador2QtdCartas" id="jogador2QtdCartas">
+    </div>
+
+  </section>
 
 
-    </section>
+  <section>
+    <h2>Dados Gerais</h2>
 
-    <section>
-      <h2>Dados do Jogador 1</h2>
+    <div class="form-group">
+      <label for="jogadorVitorioso">Digite o jogador vitorioso</label>
+      <input class="form-control" type="number" name="jogadorVitorioso" id="jogadorVitorioso" placeholder="1 ou 2">
+    </div>
 
-      <div>
-        <label for="jogador1Nome">Nome do jogador 1</label>
-        <input type="text" name="jogador1Nome" id="jogador1Nome">
-      </div>
+    <div class="form-group">
+      <label for="turnos">Digite a quantidade de turnos</label>
+      <input class="form-control" type="number" name="turnos" id="turnos" placeholder="1, 2, 3, ...">
+    </div>
 
-      <div>
-        <label for="jogador1Deck">Deck do jogador 1</label>
-        <input type="text" name="jogador1Deck" id="jogador1Deck">
-      </div>
+    <div class="form-group">
+      <label for="formaVitoria">Selecione a forma de vitória</label>
+      <select multiple class="form-control" name="formaVitoria" id="formaVitoria">
+        <?php
+          foreach($arrayTiposVitoria as $tipoVitoria) {
+            echo "<option value='$tipoVitoria[TIV_CODIGO]'>$tipoVitoria[TIV_NOME]</option>";
+          }
+        ?>
+      </select>
+    </div>
+  </section>
 
-      <div>
-        <label for="jogador1PontosVida">Pontos de vida final do jogador 1</label>
-        <input type="text" name="jogador1PontosVida" id="jogador1PontosVida">
-      </div>
-
-      <div>
-        <label for="jogador1QtdCartas">Quantidade de cartas final do jogador 1</label>
-        <input type="text" name="jogador1QtdCartas" id="jogador1QtdCartas">
-      </div>
-
-    </section>
-
-    <section>
-      <h2>Dados do Jogador 2</h2>
-
-      <div>
-        <label for="jogador2Nome">Nome do jogador 2</label>
-        <input type="text" name="jogador2Nome" id="jogador2Nome">
-      </div>
-
-      <div>
-        <label for="jogador2Deck">Deck do jogador 2</label>
-        <input type="text" name="jogador2Deck" id="jogador2Deck">
-      </div>
-
-      <div>
-        <label for="jogador2PontosVida">Pontos de vida final do jogador 2</label>
-        <input type="text" name="jogador2PontosVida" id="jogador2PontosVida">
-      </div>
-
-      <div>
-        <label for="jogador2QtdCartas">Quantidade de cartas final do jogador 2</label>
-        <input type="text" name="jogador2QtdCartas" id="jogador2QtdCartas">
-      </div>
-
-    </section>
-
-  </div>
-
-  <button type="submit">Salvar</button>
-
+  <button type="submit" class="btn btn-primary form-btn">Salvar</button>
 </form>
 </body>
 <?php include("design2.php"); ?>

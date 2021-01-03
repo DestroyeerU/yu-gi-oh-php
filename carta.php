@@ -63,9 +63,6 @@ $arrayTiposCarta = selectTiposCarta($conexao, "TIC_CODIGO, TIC_NOME");
     .form-title {
       margin-bottom: 10px;
     }
-    .form-btn {
-      margin-bottom: 10px;
-    }
   </style>
 </head>
 <body>
