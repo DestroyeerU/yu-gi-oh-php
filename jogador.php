@@ -28,23 +28,52 @@ require('./scripts/bootstrap.php');
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="stylesheet" href="styles/global.css">
-  <link rel="stylesheet" href="styles/jogador.css">
+  <link rel="stylesheet" href="componentes/areaFileSelector/areaFileSelector.css">
+
 
   <title>Cadastro de Jogador</title>
 </head>
 <body>
-  <form action="salvarJogador.php" method="post" enctype="multipart/form-data">
-    <h1>Cadastro de Jogador</h1>
+  <form class="form-container" action="salvarJogador.php" method="post" enctype="multipart/form-data">
+    <h1 class="form-title">Cadastro de Jogador</h1>
 
-    <div>
-      <label for="nome">Digite seu nome</label>
-      <input type="text" name="nome" id="nome">
+
+    <div class="form-group">
+      <label for="nome">Nome do Jogador</label>
+      <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite seu nome">
     </div>
 
-    <input type="file" name="foto" id="foto" >
+    <label class="custom-file-upload">
+      <input type="file" onchange="loadImagePreview()" name="foto" id="foto" />
 
-    <button type="submit">Salvar</button>
+      <div class="default">
+        <img src="assets/img/upload.svg" alt="upload">
+        Selecione sua foto
+      </div>
+
+      <img class="upload-preview" id="uploadPreview">
+    </label>
+
+
+    <button type="submit" class="btn btn-primary form-btn">Salvar</button>
   </form>
+
+  <script src="componentes/areaFileSelector/areaFileSelector.js"></script>
 
 </body>
 <?php include("design2.php"); ?>
+
+<!-- <form>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form> -->

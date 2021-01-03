@@ -1,0 +1,58 @@
+.custom-file-upload input {
+  display: none;
+}
+
+.custom-file-upload  {
+  display: inline-block;
+
+  width: 100%;
+  max-width: 380px;
+  height: 213px;
+
+  font-weight: 400;
+  border-radius: 8px;
+
+  color: #322153;
+  background-color: #CCF0FF;
+
+  cursor: pointer;
+}
+
+.custom-file-upload.hidden {
+  background-color: transparent;
+}
+
+.custom-file-upload .default {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  height: calc(100% - 64px);
+
+  margin: 32px;
+
+  border: 1px dashed #18AFEF;
+  border-radius: 8px;
+}
+
+.custom-file-upload .default.hidden {
+  display: none;
+}
+
+.custom-file-upload .default img {
+  margin-bottom: 16px;
+}
+
+.custom-file-upload .upload-preview {
+  display: none;
+
+  width: 100%;
+  max-width: 380px;
+  height: 213px;
+}
+
+.custom-file-upload .upload-preview.active {
+  display: inline-block;
+  object-fit: contain;
+}
