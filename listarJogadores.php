@@ -14,7 +14,7 @@ $arrayJogadores = selectJogadores($conexao, "JOG_CODIGO, JOG_NOME, JOG_FOTO");
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="stylesheet" href="styles/global.css">
-  <link rel="stylesheet" href="styles/listarJogadores.css">
+  <link rel="stylesheet" href="styles/listagemCard.css">
 
   <title>Listar Jogadores</title>
 </head>
@@ -32,7 +32,7 @@ $arrayJogadores = selectJogadores($conexao, "JOG_CODIGO, JOG_NOME, JOG_FOTO");
 
       <li>
         <div class="card" style="width: 18rem;">
-          <img class="user-image" src="<?php echo $caminhoImagem?>" alt="<?php echo $jogador['JOG_NOME']?>" >
+          <img class="item-image" src="<?php echo $caminhoImagem?>" alt="<?php echo $jogador['JOG_NOME']?>" >
           <div class="card-body">
             <h5 class="card-title"><?php echo $jogador['JOG_NOME']  ?></h5>
           </div>
